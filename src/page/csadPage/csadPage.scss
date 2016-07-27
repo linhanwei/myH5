@@ -1,0 +1,818 @@
+@import "../../common/style/_mixin";
+
+$navbackground:#313943;//导航条颜色
+$navcolor:#adafb1;//导航条文字颜色
+$navsubbackground:#e1e2e6;//次导航条颜色
+$color:#ff6868;//渲染色
+$hover:#f6f6f6;//鼠标经过颜色
+$btncolor:#292929;//按钮颜色
+$border:#e5e5e5;//分割线颜色
+$color3:#b3b3b3;//次次文字颜色
+
+input,textarea{
+  outline: none;
+}
+iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/*头部*/
+#header{
+  width:100%;
+  padding:0 20px;
+  background: #313943;
+  color: #fff;
+  line-height: 40px;
+  #logout{
+    border: 1px solid #fff;
+    height: 27px;
+    margin: 7px 6px;
+    float: right;
+    display: inline;
+    line-height: 27px;
+    padding: 0 10px;
+    border-radius: 3px;
+  }
+}
+/*头像大小*/
+.img-circle-50{
+  width:50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+/*内容*/
+.container{
+  width:100%;
+  height:100%;
+  .leftNav{
+    width:150px;
+    height:100%;
+    float: left;
+    margin-right: -100%;
+    background-color: $navbackground;
+    .headPicCol{
+      height:80px;
+      background-color: $navsubbackground;
+    }
+    #headerimg{
+      padding:15px 0 15px 10px;
+    }
+    .login_user_title{
+      padding-left:5px;
+    }
+      .cur-online{
+        &:before{
+          width:5px;
+          height:5px;
+          border-radius: 50%;
+          background-color: #37B145;
+          display: inline-block;
+          content: '';
+          vertical-align: middle;
+          margin-right: 5px;
+        }
+      }
+    ul{
+      border-bottom:1px solid #464F5B;
+    }
+    li{
+      height:100px;
+      color: $navcolor;
+      text-align: center;
+      border-bottom:1px solid #1C222A;
+      border-top:1px solid #464F5B;
+      position: relative;
+      &:before{
+        background: {
+          size: 100%;
+        };
+        width:40px;
+        height:40px;
+        display: block;
+        margin: 16px auto 0;
+        content: '';
+      }
+      &.callCenter{
+        &:before{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic1.png");
+        }
+      }
+      &.chatMessage{
+        &:before{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic2.png");
+        }
+      }
+      &.managementList{
+        &:before{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic3.png");
+        }
+      }
+      &.salesTracking{
+        &:before{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic4.png");
+        }
+      }
+      &.payVisit{
+        &:before{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic5.png");
+        }
+      }
+    }
+  }
+  .rightContainer{
+    float: left; width: 100%; height: 100%;
+    .wrap {
+      margin-left: 150px;/* background: $background; */height: 100%;
+      background-color: #F6F6F6;
+      /*顶部呼叫中心*/
+      .call_title{
+        background-color: $navsubbackground;
+        height:80px;
+        width:100%;
+        margin: 0 0 4px 4px;
+        p{
+          float: left;
+          line-height: 80px;
+          padding-left: 36px;
+        }
+
+        ul{
+          float: left;
+          li{
+            position: relative;
+            padding: 7px 7px 0;
+            .badge{
+              top: 6px;
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+      section{
+        height:100%;}
+      .wrapper{
+        width:100%;overflow-y: auto
+      }
+    }
+  }
+}
+
+/*聊天消息为空*/
+#nullchater{
+  text-align: center;
+  width: 100%;
+  margin-top: 150px;
+  font-size: 20px;
+}
+
+.chatMessageIM{
+  height:100%;
+  section{
+    height:100%;
+  }
+}
+
+
+/*聊天列表*/
+/*聊天列表左*/
+.accordion-inner {
+  margin-right: 4px;
+  height:100%;
+  width:300px;
+}
+.currentWin{
+  background-color: $background;
+  &:before{
+    content: '';
+    border-color: transparent transparent transparent $borderColor;
+    border-style: solid;
+    border-width: 8px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 35%;
+    right: -17px;
+
+  }
+  &:after {
+    content: '';
+    border-color: transparent transparent transparent $background;
+    border-style: solid;
+    border-width: 8px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 35%;
+    right: -16px;
+
+  }
+}
+/*聊天列表右*/
+#chat01{
+  background-color: $background;
+  padding: 10px;
+  #ext{
+    border: 1px solid #e5e5e5;
+    padding: 6px 10px;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  .chatMess{
+    position: relative;
+    min-height:67px;
+    p1.ex_center{
+      background: #e5e5e5;
+      padding: 6px 25px;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    p2{
+      position: absolute;
+      top: 0;
+
+    }
+    .userPhoto{
+      position: absolute;
+      top: 20px;
+
+      img{
+        width:50px;
+        border-radius: 50%;
+      }
+    }
+    .chat-content-p3{
+      img{
+        max-width:200px;
+      }
+    }
+    .boxMessage{
+      background: #AAAAB4;
+      border-radius: 5px;
+      padding-bottom: 10px;
+      width: 200px;
+      display: inline-block;
+    }
+
+    .chat-content-p3{
+      position: relative;
+      //right: 66px;
+      //
+      line-height: 26px;
+      border-radius: 5px;
+      padding: 7px;
+      top: 30px;
+      margin-bottom:30px;
+      display: inline-block;
+      &:after{
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        content: "";
+        position: absolute;
+        top: 6px;
+        width:0;
+        height:0;
+      }
+    }
+
+    &.right{
+      p2{
+        right:0;
+      }
+      .userPhoto{
+        right: 0;
+      }
+      .chat-content-p3{
+        right:60px;
+        background-color: #AAAAB4;
+        &:after{
+          border-left: 8px solid #AAAAB4;
+          right: -6px;
+        }
+      }
+
+    }
+    &.left{
+      p2{
+        left:0;
+      }
+      .userPhoto{
+        left: 0;
+      }
+      .chat-content-p3{
+        left:60px;
+        background-color: #fff;
+        &:after{
+          border-right: 8px solid #fff;
+          left: -6px;
+        }
+      }
+    }
+  }
+}
+.chat01_content {
+  height: 412px;
+  overflow-y: auto;
+}
+.chat03_content_ul{
+  position: relative;
+  height:100%;
+  border: 1px solid $borderColor;
+  overflow-y: auto;
+  resize: none;
+  &.badge{
+    margin-left: -100px;
+    top: 30px;
+  }
+
+  li{
+    height:100px;
+    border-bottom:1px solid $borderColor;
+    padding: 20px 10px;
+    position: relative;
+    img{
+      width:50px;
+      height:50px;
+      border-radius: 50%;
+      margin:10px 10px 0 0 ;
+    }
+    .message_main_item{
+      span{
+        margin-top: 20px;
+        display: block;
+      }
+      i{
+        display: block;
+        font-size: 12px;
+        font-style: normal;
+        color: $colorLighter;
+      }
+    }
+    .responseBtn{
+      span{
+        border: 1px solid #FF6868;
+        display: block;
+        width: 80%;
+        margin: 20px auto;
+        text-align: center;
+        padding: 5px 0;
+        color: #FF6868;
+      }
+    }
+
+  }
+  .chat-content-p3 {
+    border: 1px solid $borderColor;
+    white-space: pre-wrap;
+    background-color: #C0C0C0;
+
+    position: relative;
+    line-height: 26px;
+    border-radius: 5px;
+    padding: 7px;
+    top: 30px;
+    margin-bottom: 30px;
+    display: inline-block;
+    img {
+      max-width: 200px;
+    }
+    &:after {
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      content: "";
+      position: absolute;
+      top: 6px;
+      width: 0;
+      height: 0;
+    }
+  }
+  .chatMess{
+    position: relative;
+    min-height:67px;
+    p1.ex_center{
+      background: #e5e5e5;
+      padding: 6px 25px;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    p2{
+      position: absolute;
+      top: 0;
+
+    }
+    .userPhoto{
+      position: absolute;
+      top: 20px;
+
+      img{
+        width:50px;
+        border-radius: 50%;
+      }
+    }
+    .boxMessage{
+      background: #AAAAB4;
+      border-radius: 5px;
+      padding-bottom: 10px;
+      width: 200px;
+      display: inline-block;
+    }
+    &.right{
+      p2{
+        right:0;
+      }
+      .userPhoto{
+        right: 0;
+      }
+      .chat-content-p3{
+        right:60px;
+        background-color: #AAAAB4;
+        &:after{
+          border-left: 8px solid #AAAAB4;
+          right: -6px;
+        }
+      }
+
+    }
+    &.left{
+      p2{
+        left:0;
+      }
+      .userPhoto{
+        left: 0;
+      }
+      .chat-content-p3{
+        left:60px;
+        background-color: #fff;
+        &:after{
+          border-right: 8px solid #fff;
+          left: -6px;
+        }
+      }
+    }
+  }
+}
+.chatRight {
+  position: relative;
+  width:100%;
+}
+.chat02 {
+  border: 1px solid #e5e5e5;
+  padding-bottom: 10px;
+}
+.chat02_title {
+  height: 50px;
+  position: relative;
+  padding-left:10px;
+  .chat02_title_btn {
+    background: url("#{$img_path}common/images/personalTailor/csad/dialogue_ic1.png");
+    cursor: pointer;
+    float: left;
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin: 7px 0;
+  }
+}
+.chat02_content {
+  height: 100px;
+  border-top: 1px solid #e5e5e5;
+  textarea {
+    resize: none;
+    width: 100%;
+    border: none;
+    height: 100%;
+  }
+}
+.chat02_bar {
+  text-align: right;
+  span {
+    border: 1px solid #e5e5e5;
+    padding: 7px 22px;
+    margin-right: 10px;
+  }
+}
+
+/*表情*/
+.wl_faces_box {
+  background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/wlf_bg.png') repeat 0 0;
+  position: absolute;
+  width: 428px;
+  height: 225px;
+  bottom: 22px;
+  left: -50px;
+  display: none;
+  .wl_faces_content {
+    background: #fff;
+    border: 1px #ccc solid;
+    width: 417px;
+    height: 216px;
+    margin: 3px 4px;
+    .title {
+      background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/wlf_title_bg.jpg') repeat-x 0 0;
+      height: 40px;
+      position: relative;
+      li {
+        position: absolute;
+        display: block;
+        &.title_name {
+          background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/wlf_title_btn.jpg') no-repeat 0 0;
+          width: 82px;
+          height: 30px;
+          bottom: 0;
+          _bottom: -2px;
+          left: 15px;
+          text-align: center;
+          line-height: 32px;
+          font-weight: bold;
+          color: #333;
+        }
+        &.wl_faces_close {
+          right: 8px;
+          top: 15px;
+        }
+        &.wl_faces_close span {
+          background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/icon.png') repeat-x 0 0;
+          cursor: pointer;
+          display: block;
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+  .wl_faces_main ul {
+    margin: 12px 28px;
+    overflow: hidden;
+    border-top: 1px $borderColor solid;
+    border-left: 1px $borderColor solid;
+    width: 360px;
+    li {
+      float: left;
+      border-right: 1px $borderColor solid;
+      border-bottom: 1px$borderColor solid;
+      height: 26px;
+      width: 26px;
+      margin: -1px 0 0 -1px;
+      padding: 4px 2px;
+      text-align: center;
+      img {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+  .wlf_icon {
+    background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/layer_arrow.png') no-repeat 0 0;
+    position: absolute;
+    width: 22px;
+    height: 9px;
+    bottom: -4px;
+    _bottom: -11px;
+    left: 61px;
+  }
+}
+
+
+//消息提醒
+.badgegroup,.badge{
+position: absolute;
+left: 50%;
+min-width: 16px;
+height: 16px;
+background: $color;
+text-align: center;
+color: #fff;
+line-height: 16px;
+top: 20px;
+font-size: 12px;
+padding: 0 5px;
+border-radius: 8px;
+margin-left: 10px;
+}
+
+/*分组以及搜索以及右键*/
+/*分组*/
+.groupsContent{
+
+  position: relative;
+  width:300px;
+  height:100%;
+  background-color: #fff;
+  overflow-y: auto;
+  border:1px solid $borderColor;
+  ul{
+    margin-top: 80px;
+  }
+  li{
+
+    &.hideGroupMember{
+      .title{
+        &:before{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/icon_fold.png");
+        }
+      }
+    }
+    .title{
+      height:54px;
+      border-bottom:1px solid $borderColor;
+      line-height: 54px;
+      margin: 0 0 0 5%;
+      width: 95%;
+      &:before{
+        background: {
+          image:url("#{$img_path}common/images/personalTailor/csad/icon_unfold.png");
+          size: 100%;
+        }
+        vertical-align: middle;
+        width:30px;
+        height:30px;
+        content: '';
+        display: inline-block;
+      }
+
+      .number{
+        float: right;
+        color: $colorLighter;
+        font-size: 12px;
+        margin-right: 10px;
+      }
+    }
+    dl{
+      dd{
+        padding-left: 4%;
+        line-height: 60px;
+      }
+      img{
+        width: 50px;
+        border-radius: 50%;
+        margin:5px 10px;
+        display: inline-block;
+      }
+      em{
+        font-size: 18px;
+        margin-right: 5px;
+      }
+      i{
+        font-style: normal;
+
+      }
+    }
+    .groupMember{
+      transition: all 0.5s ease-in 0s;
+    }
+    &.hideGroupMember{
+      .groupMember{
+        opacity: 0;
+        //height:0;
+        display: none;
+      }
+    }
+  }
+}
+/*右键*/
+.rightMenu {
+  position:absolute;
+  top:-9999px;
+  left:-9999px;
+  ul {
+    float: left;
+    box-shadow: 0 0 5px #edecec;
+    background-color: #fff;
+    li {
+      clear: both;
+      height: 30px;
+      cursor: pointer;
+      line-height: 30px;
+      white-space: nowrap;
+      padding: 0 10px;
+
+      &.sub {
+        &:after{
+          background: {
+            image: url("#{$img_path}common/images/personalTailor/csad/icon_more.png");
+            size: 100%;
+          };
+          content: '';
+          width:20px;
+          height: 20px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+      &:hover {
+        background-color: $background;
+      }
+    }
+    ul {
+      display: none;
+      position: absolute;
+    }
+  }
+}
+
+/*搜索*/
+@mixin icon-image($left, $top) {
+  background-image: url("#{$img_path}common/images/personalTailor/csad/icon_search.png");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: $left $top;
+}
+.search-wrap {
+  //margin: 0 8px;
+ // padding: 8px 0;
+  //overflow: hidden;
+  height:80px;
+  padding: 18px 0;
+  background-color: $navsubbackground;
+  position: fixed;
+  width:300px;
+  .icon-search {
+    @include icon-image(center, center);
+  }
+
+  .search-box {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 25px;
+    background-color: #fff;
+    overflow: hidden;
+    margin: 0 10px;
+  }
+  .icon-search, .icon-wrap {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .icon-search {
+    left: 0;
+  }
+  .icon-wrap {
+    right: 0;
+  }
+  .input-wrap{
+    width:100%;
+  }
+  .search-input {
+    width: 100%;
+    height: 40px;
+    line-height: normal;
+    padding: 4px 4px 4px 40px;
+    border-radius: 4px;
+  }
+  .icon-close {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 50%;
+    vertical-align: middle;
+    background-image: url("#{$img_path}common/images/icon-search-delete.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}
+#append{
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  top: 84px;
+  left: 0;
+  background: #fff;
+  padding:10px;
+  height:100%;
+  border-top:1px solid $borderColor;
+  .search_result_tit{
+    margin-top:20px;
+    color: $colorLighter;
+
+  }
+  .col{
+    p{
+      font-size: 12px;
+      color: $colorLighter;
+      i{
+        font-size: 12px;
+        font-style: normal;
+      }
+      &:first-child{
+        font-size: 18px;
+        color: $colorDeep;
+      }
+    }
+  }
+  .headPic{
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .resultItem{
+    margin-bottom:10px;
+  }
+}

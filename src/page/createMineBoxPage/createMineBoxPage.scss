@@ -1,0 +1,650 @@
+@import "../../common/style/_mixin";
+$navbackground:#313943;//导航条颜色
+$navcolor:#adafb1;//导航条文字颜色
+$navsubbackground:#e1e2e6;//次导航条颜色
+$color:#ff6868;//渲染色
+$hover:#f6f6f6;//鼠标经过颜色
+$btncolor:#292929;//按钮颜色
+$border:#e5e5e5;//分割线颜色
+$color3:#b3b3b3;//次次文字颜色
+$foreground:#292929;
+@mixin choice() {
+  background-size: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  content: '';
+  position: absolute;
+  right:0;
+  bottom:0;
+}
+select{
+  background-color: #fff;
+  -webkit-appearance:none;
+  background-image: url("#{$img_path}/common/images/icon_dropdown.png");
+  background-position: right center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  padding: 0 5px;
+  font-size: 14px;
+  width:40%;
+  border:1px solid #2e2e2e;
+  height:30px;
+  line-height: 30px;
+  margin:0 5%;
+  display: inline-block;
+
+}
+textarea{
+  resize: none;
+  width:100%;
+  height:70px;
+}
+input[type="text"], input[type="tel"], input[type="password"], input[type="search"],input
+{
+  border-width: 0 ;
+  border-bottom: 1px solid #292929 ;
+  /*text-align: center ;*/
+  border-radius: 0; }
+input[type="tel"]{
+  width:50px;
+  text-align: center;
+}
+
+.boxItem,#userLessonList,.addPOP{
+  .choice{
+    display: inline-block;
+    margin: 0 5% 2% 0;
+    &.chooseItem{
+      border:1px solid $borderColor;
+      width: 45%;
+      text-align: center;
+      padding: 1.5% 0;
+
+    }
+    &.active{
+      position: relative;
+      border:1px solid $foreground;
+      &:before{
+        @include choice();
+        background-image: url("#{$img_path}common/images/personalTailor/icon_choose.png");
+      }
+    }
+  }
+}
+.CreateBoxContainer,.coursePreviewContent{
+  .boxItem {
+    border:1px solid $borderColor;
+    margin-bottom:5px;
+    .title{
+      background-color: $background;
+      line-height: 40px;
+      padding:0 8px;
+
+    }
+    .contentItem{
+      padding: 8px;
+    }
+    .displayB{
+      display: block;
+    }
+
+
+    &.boxMessage{
+      .contentItem{
+        .row {
+          margin: 8px;
+        }
+        input[type=text]{
+          border: 1px solid #e5e5e5 !important;
+          height: 30px !important;
+        }
+
+        label{
+          margin-right:8px;
+          line-height: 30px;
+        }
+
+      }
+
+    }
+    &.courseMessage{
+      .chooseCourseTpl{
+        text-align: center;
+        text-decoration: underline;
+        padding: 10px 0;
+      }
+    }
+    &.productMessage{
+      ul{
+        overflow: hidden;
+      }
+      li{
+        position: relative;
+        width:100px;
+        float: left;
+        margin-right:10px;
+
+      }
+      .deleteProduct{
+        width:27px;
+        height:27px;
+        background: {
+          image:  url("#{$img_path}common/images/personalTailor/pic_delete.png");
+          size: 100%;
+        };
+        display: block;
+        position: absolute;
+        right:0;
+        top:0;
+      }
+    }
+  }
+  .box_img{
+    dd,div{
+      width: 60px;
+      display: inline-block;
+      margin-right: 5px;
+      position: relative;
+      .deleteImg{
+        width:27px;
+        height:27px;
+        background: {
+          image:  url("#{$img_path}common/images/personalTailor/pic_delete.png");
+          size: 100%;
+        };
+        display: block;
+        position: absolute;
+        right:0;
+        top:0;
+      }
+    }
+  }
+
+
+  .addPic{
+    img{
+      position: relative;
+      z-index: 0;
+    }
+    .file{
+      width:100%;
+      opacity: 0;
+      position: absolute;
+      left:0;
+      top:0;
+      z-index: 9;
+      height:100%
+    }
+  }
+  .footer{
+    margin:10px 0;
+    .row{
+      width:70%;
+      margin: 0 auto;
+    }
+    span{
+      display: inline-block;
+      // width: 35%;
+      margin: 5px auto;
+      text-align: center;
+      background-color: $foreground;
+      border-radius: 5px;
+      color: #fff;
+      line-height: 34px;
+      margin: 3% 5%;
+    }
+  }
+
+
+  /*汇总*/
+  .courseGather {
+    position: relative;
+    padding-left:3.5px;
+    .gather_sectionName{
+      border-left: 2px solid $foreground;
+      padding-left:2%;
+    }
+    //input{
+    //  border-width:0 !important;
+    //  border-bottom:1px solid $foreground !important;
+    //  text-align: center !important;
+    //  border-radius: 0 !important;
+    //
+    //}
+    .whiteDot{
+      background-color: #fff;
+      height:7px;
+      width:7px;
+      display: block;
+      position: absolute;
+    }
+    .sectionLs{
+      .sl_left {
+        border-left: 1px solid $foreground;
+        &:before{
+          border-radius:50%;
+          background-color: $foreground;
+          width:7px;
+          height:7px;
+          display: inline-block;
+          vertical-align: middle;
+          content: '';
+          margin: -2px 10% 0 -4px;
+        }
+      }
+
+      .stepDot{
+        &:before{
+          border-radius:50%;
+          background-color: $foreground;
+          width:5px;
+          height:5px;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right:1%;
+          content: '';
+        }
+      }
+      .gather_stepList{
+        margin-left: -2.5%;
+        .row{
+          margin-left: 2em;
+        }
+      }
+      dd{
+        &:nth-last-child(2){
+          .sl_left{
+            position: relative;
+            &:after{
+              width: 1px;
+              height: 10px;
+              display: inline-block;
+              vertical-align: middle;
+              content: '';
+              position: absolute;
+              left: -1px;
+              bottom: -9px;
+              background-color:  $foreground;
+            }
+          }
+        }
+        &:last-child{
+          .sl_left{
+            border-left-width:0;
+          }
+        }
+      }
+    }
+  }
+}
+#courseBox{
+  width:960px;
+  position: absolute;
+  left:50%;
+  top:50%;
+  margin-left:-480px;
+  margin-top:-233px;
+  height:466px;
+  background-color: #fff;
+  padding:20px 30px;
+  ul{
+    margin-top: 25px;
+    height: 320px;
+    overflow-y: auto;
+    li{
+      width:290px;
+      margin: 10px 15px 10px 0;
+      display: inline-block;
+      position: relative;
+      &:nth-child(3n){
+        margin-right:0;
+      }
+      i{
+        position: absolute;
+        background-size: 100%;
+        width: 24px;
+        height: 24px;
+        right:0;
+        bottom:0;
+        display: block;
+        z-index: 9;
+      }
+      &.hasChoiceCourse{
+        i{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/box_pic_select.png");
+        }
+      }
+    }
+  }
+  .selectedCourseTplBtn{
+    width: 180px;
+    height: 30px;
+    background: $foreground;
+    color: #fff;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    margin: 30px auto 0;
+  }
+}
+/*装载问卷容器*/
+.containerQuestion{
+  position: relative;
+  width: 400px;
+  background: #fff;
+  height: 80%;
+  overflow-y: auto;
+  position: absolute;
+  left: 50%;
+  margin-left: -200px;
+  top: 10%;
+
+}
+.closeBtn{
+  width:40px;
+  height:40px;
+  position: absolute;
+  right:0;
+  top:0;
+  background-image: url("#{$img_path}common/images/personalTailor/csad/dialogue_delect.png");
+  display: block;
+}
+.deleteIcon{
+  background: {
+    size: 100%;
+    image: url("#{$img_path}common/images/personalTailor/csad/box_edit.png");
+  };
+  width:24px;
+  height:24px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+//获取课时
+#userLessonList {
+  padding: 2%;
+  overflow-y: auto;
+  z-index: 3;
+  li {
+    padding: 0 2% 2%;
+    margin-bottom: 2%;
+    border-bottom: 1px solid $borderColor;
+    line-height: 22px;
+    &:last-child{
+      border-bottom-width:0;
+    }
+    .answer{
+      color: $colorLighter;
+    }
+  }
+
+  .lessonChoice {
+    width: 80%;
+    margin: 3% auto 1%;
+    height: 30px;
+    background-color: $borderColor;
+    text-align: center;
+    i {
+      background: {
+        image: url("#{$img_path}common/images/personalTailor/icon_default.png");
+        size: 100%;
+      };
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      margin: 4px 0;
+    }
+    &.hasChoice {
+      background-color: $foreground;
+      i {
+        background: {
+          image: url("#{$img_path}common/images/personalTailor/icon_selection.png");
+        };
+      }
+    }
+  }
+  .borderl{
+    position: relative;
+    padding-left: 3%;
+    &:before{
+      content: '';
+      position: absolute;
+      width:2px;
+      background-color: $foreground;
+      height:16px;
+      top: 2px;
+      left:0;
+    }
+    b{
+      color: $colorLighter;
+    }
+
+  }
+
+  .stepItemDot{
+    border-left:1px solid $foreground;
+    position: relative;
+    margin: 0 2%;
+    padding-left: 2%;
+    &:before{
+      border-radius:50%;
+      background-color: $foreground;
+      width:7px;
+      height:7px;
+      display: inline-block;
+      vertical-align: middle;
+      content: '';
+      margin: -2px 10% 0 -4px;
+      position: absolute;
+      left: 0;
+      top:10px;
+      z-index: 2;
+    }
+    &:after{
+      width: 1px;
+      height: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      content: '';
+      position: absolute;
+      left: -1px;
+      bottom: -9px;
+      background-color:  $foreground;
+    }
+  }
+  .less_step{
+    padding:2% 0 0 5%;
+    position: relative;
+    .row:first-child{
+      i{
+        width: 1px;
+        height: 10px;
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        left: -1px;
+        top: 0;
+        background-color:  #fff;
+        z-index: 1;
+      }
+
+    }
+    dd{
+      &:last-child{
+        .stepItemDot{
+          border-left-width: 0;
+          &:after{
+            width: 0;
+            height: 0;
+            display: inline-block;
+            vertical-align: middle;
+            content: '';
+          }
+        }
+
+      }
+    }
+    &:before{
+      background-color: #fff;
+      height:7px;
+      width:7px;
+      display: block;
+      position: absolute;
+    }
+    &:after{
+      background-color: $foreground;
+      height:7px;
+      width:1px;
+      display: block;
+      position: absolute;
+    }
+  }
+}
+#chooseBoxProduct{
+  z-index: 3;
+}
+//添加
+.translate-viewport{
+  background-color: rgba(0,0,0,.5);
+}
+.addContent,.chooseDialog,.coursePreviewContent,#chooseBoxProduct ul{
+  position: relative;
+  width: 500px;
+  margin: 10% auto 0;
+  background: #fff;
+  height: 80%;
+  padding: 20px;
+  overflow-y: auto;
+}
+#chooseBoxProduct ul{
+  li{
+    width:45%;
+    display: inline-block;
+    margin-right:3%;
+    position: relative;
+    &.hasChoiceProd2 {
+      .chooseProducti {
+        background-image: url("#{$img_path}common/images/personalTailor/icon_pro_selection.png");
+      }
+    }
+    .chooseProducti{
+      position: absolute;
+      background-image: url("http://mikumine.b0.upaiyun.com/common/images/personalTailor/icon_pro_default.png");
+      background-size: 100%;
+      width: 30px;
+      height: 30px;
+      right: 0;
+      top: 0;
+      display: block;
+      z-index: 9;
+    }
+
+  }
+}
+.addPOP{
+  dl{
+    dd{
+      padding-bottom: 2%;
+      p{
+        span:first-child{
+          border-left-width:0;
+          font-size: 12px;
+        }
+      }
+      span{
+        display: inline-block;
+        &:first-child{
+          border-left: 2px solid $foreground;
+          padding-left:2%;
+          margin-bottom:3%;
+        }
+      }
+    }
+    .btn{
+      line-height: 34px;
+      background-color: $foreground;
+      margin-right: 2%;
+      text-align: center;
+      color: #fff;
+      padding:0 5%;
+    }
+    input{
+      margin:0 5px;
+      text-align: center
+    }
+  }
+}
+//选择产品
+#chooseProduct{
+  overflow-y: auto;
+  background-color: $background;
+  ul{
+    width:500px;
+    margin: 10% auto;
+    height:80px;
+  }
+  li{
+    margin: 2%;
+  }
+  .productItem{
+    padding: 1.5%;
+    font-size: 11px;
+    border-radius: 10px;
+    background-color: #fff;
+    border-left: 5px solid $background;
+    border-right: 5px solid $background;
+    position: relative;
+    dt{
+      position: relative;
+      span{
+        background-color: rgba(0,0,0,.1);
+        z-index: 2;
+        position: absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        display: block;
+      }
+      img{
+        margin: 0 auto;
+        z-index: 1;
+      }
+    }
+
+    i{
+      position: absolute;
+      background-image: url("#{$img_path}common/images/personalTailor/icon_pro_default.png");
+      background-size: 100%;
+      width: 30px;
+      height: 30px;
+      right:0;
+      top:0;
+      display: block;
+      z-index: 9;
+    }
+    &.hasChoiceProd{
+      i{
+        background-image: url("#{$img_path}common/images/personalTailor/icon_pro_selection.png");
+      }
+
+    }
+  }
+}
+
+//添加
+.addBtn {
+  line-height: 34px;
+  background-color: $foreground;
+  //margin-right: 2%;
+  text-align: center;
+  color: #fff;
+ // padding: 0 5%;
+  width: 120px;
+  display: inline-block;
+  margin: 10px 2% 0 0;
+}
+

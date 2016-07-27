@@ -1,0 +1,168 @@
+@import "../../common/style/_mixin";
+$foreground:#292929;
+$color3:#E1E2E6;
+@mixin choice() {
+  background-size: 12px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 12px;
+  height:12px;
+  vertical-align: middle;
+  content: '';
+}
+body{
+  overflow-y: auto;
+}
+.containerQuestion{
+  input[type="submit"], input[type="reset"], input[type="tel"], input[type="button"], input[type="text"], input[type="password"], input{
+    border:1px solid $borderColor;
+    width:120px;
+    height:30px;
+    border-radius: 5px;
+  }
+  textarea{
+    width:100%;
+    height:90px;
+    padding: 2%;
+    border:1px solid $borderColor;
+    resize: none;
+  }
+  .boxItem {
+    border:1px solid $color3;
+    margin-bottom:5px;
+    .title{
+      background-color: $background;
+      line-height: 40px;
+      padding:0 8px;
+
+    }
+    .contentItem{
+      padding: 8px;
+      .choice{
+        display: inline-block;
+        margin-right: 5%;
+        i{
+          @include choice();
+          background-image: url("#{$img_path}common/images/personalTailor/csad/report_unselect.png");
+        }
+      }
+      .active{
+        i{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/report_selected.png");
+        }
+      }
+      .question_item{
+        padding: 5px;
+        dd{
+          line-height: 26px;
+          padding-left: 1.3em;
+        }
+      }
+      .textarea{
+        p{
+          margin-bottom: 5px;
+        }
+      }
+    }
+    &.basicMessage{
+      .contentItem{
+        .col{
+          margin: 5px;
+          label{
+            margin-right:5px;
+          }
+        }
+      }
+    }
+  }
+  .addPic{
+    position: relative;
+    img{
+      position: relative;
+      z-index: 0;
+    }
+    .file{
+      width:100%;
+      opacity: 0;
+      position: absolute;
+      left:0;
+      top:0;
+      z-index: 9;
+      height:100%
+    }
+
+  }
+
+  .wantToSolve{
+    dl{
+      dd{
+        width:60px;
+        display: inline-block;
+        margin-right:5px;
+        position: relative;
+        img{
+
+        }
+      }
+    }
+  }
+
+  .footer{
+    margin:10px 0;
+    .row{
+      width:70%;
+      margin: 0 auto;
+    }
+    span{
+      display: inline-block;
+      // width: 35%;
+      margin: 5px auto;
+      text-align: center;
+      background-color: $foreground;
+      border-radius: 5px;
+      color: #fff;
+      line-height: 34px;
+      margin: 3% 5%;
+    }
+  }
+
+  table{
+    td,th{
+      border:1px solid $borderColor;
+      text-align: center;
+      width:25%;
+      span{
+        width:100%;
+        height:30px;
+        display: block;
+        background-color: transparent;
+        &.activeSpan{
+          background:{
+            image: url("#{$img_path}common/images/personalTailor/csad/report_select.png");
+            size: 25px;
+            position: center center;
+            repeat: no-repeat;
+          }
+        }
+      }
+      input[type=text]{
+        border-width:0 !important;
+        padding:0 5px;
+      }
+    }
+  }
+
+  .deleteImg{
+    width:27px;
+    height:27px;
+    background: {
+      image:  url("#{$img_path}common/images/personalTailor/pic_delete.png") !important;
+      size: 100%;
+    };
+    display: block;
+    position: absolute;
+    right:0;
+    top:0;
+  }
+}
+

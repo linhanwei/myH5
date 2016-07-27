@@ -1,0 +1,229 @@
+@import "../../common/style/_mixin";
+
+#questionContainer{
+  padding:0;
+  overflow-y: auto;
+}
+.resultPage{
+  width:92%;
+  margin: 0 auto;
+  overflow-y: auto;
+  height:100%;
+  padding:2% 0 50px;
+
+  .title{
+    margin: 2% 0;
+  }
+  ul {
+    h3 {
+      background-color: $foreground;
+      color: #fff;
+      line-height: 30px;
+      text-align: center;
+      display: inline-block;
+      padding: 0 5%;
+    }
+    dl {
+      padding: 3% 5%;
+      dd {
+        padding-bottom: 3%;
+        overflow: hidden;
+        &:last-child {
+          padding-bottom: 0;
+        }
+        .editAnswer{
+          text-decoration: underline;
+        }
+        .color{
+          height:14px;
+          width:60px;
+          display: inline-block;
+        }
+        img{
+          width: 22%;
+          float: left;
+          margin:0 1.5%;
+
+        }
+      }
+    }
+  }
+
+}
+.question_item{
+  width:100%;
+  margin: 0 auto;
+  overflow-y: auto;
+  padding-top: 5%;
+  height:100%;
+  top:0;
+  left:0;
+  position: absolute;
+  z-index: 9;
+  background: #fff;
+  padding: 5% 2%;
+  .tips{
+    font-size: 12px;
+    color: $colorLighter;
+    margin: 2%;
+  }
+}
+.answerBox{
+  dd{
+    width:50%;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    &.block{
+      width:70%;
+      margin: 2% auto 0;
+      float: none;
+      text-align: center;
+      p{
+        padding:2% 0;
+        color: $colorLighter;
+      }
+
+    }
+    span{
+      margin: 5px auto;
+      border:1px solid $borderColor;
+      width: 90%;
+      text-align: center;
+      line-height:34px;
+      display: block;
+      padding:0 4%;
+      position: relative;
+      &.active:before{
+        background-image: url("#{$img_path}common/images/icon_class_choose.png");
+        background-repeat: no-repeat;
+        border-color:$foreground;
+        color: $foreground;
+        background-size: 100%;
+        content: '';
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.bottom_bar{
+    position: absolute;
+    bottom:0px;
+    left:3%;
+    width:94%;
+    background-color: #fff;
+    padding-bottom:14px;
+    z-index: 9;
+  ul{
+    width:72%;
+    margin: 0 auto;
+    li{
+      margin: 0 7.5%;
+    }
+  }
+  span{
+    display: block;
+    border:1px solid $foreground;
+    text-align: center;
+    line-height: 34px;
+    margin: 0 auto;
+    color: $foreground;
+    background-color: #fff;
+    //width:92%;
+    &.reset{
+      color: #fff;
+      background-color: $foreground;
+    }
+  }
+}
+.colorBlock {
+  width: 70%;
+  margin: 5% auto;
+  position: relative;
+  /* display: none;*/
+  dd{
+    width:100%;
+    height:26px;
+  }
+}
+.block1{
+  display: block;
+  position: absolute;
+  top:10px;
+  right:-50px;
+  width: 0;
+  height: 0;
+  border-right: 50px solid #FBF4EB;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+}
+.colorBlock2 {
+  height: 300px;
+  position: relative;
+}
+.colorOuter {
+  height: 100%;
+  background-image: url("#{$img_path}/common/images/personalTailor/bg_progressbar.png");
+  width: 10px;
+  margin: 5% auto;
+
+}
+.inner {
+  width: 10px;
+  background-color: $foreground;
+  //height: 100%;
+}
+
+.block2 {
+  background-image: url("#{$img_path}common/images/personalTailor/icon_dot.png");
+  background-size: 100%;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  margin-left: -9px;
+  display: block; }
+
+.moveTips{
+  background-color: #fb4e90;
+  height: 19px;
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+  padding:1px 2%;
+  border-radius: 3px;
+  margin-left: 15px;
+  &:before{
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-right: 8px solid #fb4e90;
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 5px;
+  }
+}
+
+.blockDrapTips {
+  text-align: center;
+  color: #7c7c7c;
+margin-top: 5px;}
+@media (max-height:480px) {
+  .colorBlock2 {height: 230px;}
+  .colorBlock dd{
+    height:19px;
+  }
+
+}

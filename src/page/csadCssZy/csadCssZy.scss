@@ -1,0 +1,678 @@
+/**
+ * Created by Spades-k on 2016/7/15.
+ * version 0.0.1
+ */
+
+@import "../../common/style/_mixin";
+$linecolor:#E7E7E7;
+//---------------addBoxRecodePageCsad.css start----------
+.tc{
+  text-align: center;
+}
+.fl{
+  float: left;
+}
+.f18{
+  font-size: 18px;
+}
+.f12{
+  font-size: 12px;
+}
+.page-content{
+  padding: 0;
+  background-color: #F6F6F6;
+  overflow: auto;
+  position: static;
+  li{
+    padding: 0 20px;
+  }
+  .input_information{
+    textarea{
+      width:100%;
+      border: none;
+      background-color: #F6F6F6;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    p{
+      font-size: 16px;
+      color: #838383;
+      padding: 8px 0;
+    }
+  }
+  .use_time{
+    h3{
+      font-size: 16px;
+      padding: 5px 0;
+    }
+    .select_time{
+      select{
+        background-color: #E5E5E5;
+        -webkit-appearance:none;
+        background-image: url("#{$img_path}/common/images/dropdown.png");
+        background-position: right center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        padding: 0 10px;
+        font-size: 16px;
+        width:30%;
+        border:none;
+        height: 36px;
+        line-height: 36px;
+        margin: 0 3% 0 0;
+        display: inline-block;
+      }
+    }
+  }
+  .select_box{
+    margin-top: 20px;
+    h3{
+      font-size: 16px;
+      padding: 5px 0;
+    }
+    .select_con{
+      select{
+        background-color: #E5E5E5;
+        -webkit-appearance:none;
+        background-image: url("#{$img_path}common/images/dropdown.png");
+        background-position: right center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        padding: 0 10px;
+        font-size: 16px;
+        width:100%;
+        border:none;
+        height: 36px;
+        line-height: 36px;
+        display: inline-block;
+      }
+    }
+  }
+  .photo{
+    overflow: hidden;
+    margin-top: 20px;
+    dl{
+      padding-bottom: 0;
+    }
+    p{
+      padding: 0 0 2% 4%;
+    }
+    dl {
+      overflow: hidden;
+      padding: 3% 0;
+      dd {
+        overflow: hidden;
+
+        .addPic{
+          position: relative;
+          img{
+            position: relative;
+            z-index: 0;
+            width:100%;
+          }
+          .file{
+            width:100%;
+            opacity: 0;
+            position: absolute;
+            left:0;
+            top:0;
+            z-index: 9;
+            height:100%
+          }
+
+        }
+      }
+    }
+    dd{
+      //width: 22%;
+      //float: left;
+      //margin:0 1.5%;
+      width:60px;
+      height:60px;
+      float: left;
+      margin:0 6px 6px 0;
+      position: relative;
+      &.active:before{
+        background-image: url("#{$img_path}common/images/icon_class_choose.png");
+        background-repeat: no-repeat;
+        border-color:$foreground;
+        color: $foreground;
+        background-size: 100%;
+        content: '';
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+
+      .delete{
+        width: 27px;
+        height: 27px;
+        background: {
+          image:  url("#{$img_path}common/images/personalTailor/icon_record_delete.png");
+          size: 100%;
+        };
+        display: block;
+        position: absolute;
+        right:0;
+        top:0;
+      }
+    }
+
+  }
+  .save{
+    padding: 10px 0 20px 0;
+    .save_btn{
+      border: none;
+      background-color: #252525;
+      padding: 8px 0;
+      width: 80%;
+      border-radius: 4px;
+      color: white;
+    }
+  }
+}
+//---------------addBoxRecodePageCsad.css end----------
+//---------------csadUserTrajectory start----------
+
+#_index{
+  background-color: white;
+  .usertrajectory_user_box{
+    .box_nav{
+      background-color: white;
+      li{
+        cursor: pointer;
+        padding: 21px 0;
+        width:100px;
+        text-align:center;
+        border: 1px solid $linecolor;
+        background-color: #F6F6F6;
+        &.active{
+          background-color: white;
+          border-bottom: none;
+        }
+        &:nth-child(1){
+          width: 20%;
+          border-right: none;
+        }
+        &:nth-child(2){
+          width:20%;
+          border-right: none;
+        }
+        &:nth-child(3){
+          width: 60%;
+          background-color: white;
+          border-top: none;
+          border-right: none;
+        }
+      }
+
+    }
+    .con{
+      .buy_box_records{
+        margin-top: 10px;
+        .title{
+          background-color: #E1E2E6;
+          padding: 10px 0;
+          text-align: center;
+        }
+        .table_con{
+          background-color: white;
+          ul{
+            display: inline-block;
+            li{
+              padding: 0;
+            }
+            li:nth-child(1){
+              margin-top: 14%;
+            }
+          }
+          table{
+            width:100%;
+            tr{
+              td{
+                text-align: center;
+                border-bottom: 1px solid $linecolor;
+              }
+              td:nth-child(1){
+                width: 5%;
+                text-align: center;
+                i{
+                  width: 15px;
+                  height: 15px;
+                  background: #FF6868;
+                  display: inline-block;
+                  border-radius: 50%;
+                  text-align: center;
+                  line-height: 17px;
+                  color: white;
+                }
+              }
+              td:nth-child(2){
+                text-align: center;
+                p{
+                  display: inline-block;
+                  padding: 1px 7px;
+                  background: #F6F6F6;
+                  border-radius: 18px;
+                }
+              }
+            }
+          }
+        }
+        .up_and_down{
+          cursor: pointer;
+          text-align: center;
+          background-color: #F6F6F6;
+          padding: 6px 0;
+        }
+      }
+      .analysis_report_list{
+        margin-top: 10px;
+        td{
+          padding: 23px 0;
+        }
+      }
+      .product_usage_record{
+        .title{
+          position: relative;
+          .addrecord{
+            cursor: pointer;
+            display: inline-block;
+            position: absolute;
+            right: 40px;
+            color: #FF6868;
+          }
+        }
+        margin-top: 10px;
+        .buy_box_records{
+          tr{
+            td{
+              height:69px;
+            }
+            td:nth-child(2){
+              .record_p{
+                padding: 0;
+                background-color: white;
+                border-radius: 0;
+              }
+            }
+            img{
+              height: 50px;
+              width:auto;
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//---------------csadUserTrajectory end----------
+
+//-------------csadDirectionCenter start---------
+#direction_box{
+  width: 100%;
+  height:100%;
+  background-color: #F6F6F6;
+  #direction_center{
+    background-color: #F6F6F6;
+    .con_box{
+      width: 57%;
+      margin: 0 auto 0 auto;
+      padding-top: 60px;
+      min-width: 1010px;
+      .leftbox{
+        width:42%;
+        height: 740px;
+        float: left;
+        .payment_list{
+          width:29%;
+          background-color: white;
+          height: 100%;
+          float: left;
+          ul{
+            li{
+              height:80px;
+              line-height: 80px;
+              text-align: center;
+              border-right: 1px solid #DBDBDB;
+              cursor: pointer;
+              &.active{
+                color: #ff6868;
+                border-right: 1px solid transparent;
+              }
+            }
+          }
+        }
+        .payment_people{
+          width: 71%;
+          float: left;
+          height: 100%;
+          overflow: auto;
+          .box_next_page{
+            background-color: white;
+          }
+          ul{
+            li{
+              border-bottom: 1px solid #DBDBDB;
+              background-color: #F6F6F6;
+              padding: 0 0 0 4px;
+              margin-right: 4px;
+              cursor: pointer;
+              .people_box{
+                background-color: #FEFEFE;
+                padding: 15px 10px;
+                box-shadow: 0 0 5px #e8e8e8;
+                &.active{
+                  background-color: #F6F6F6;
+                }
+                .pic{
+                  img{
+                    width:50px;
+                    height:50px;
+                    border-radius: 50%;
+                  }
+                }
+                .people_msg{
+                  width:158px;
+                  padding-left: 14px;
+                  p:nth-child(2){
+                    color: #7c7c7c;
+                  }
+                  p:nth-child(3){
+                    color: #7c7c7c;
+                  }
+                }
+                .p_r{
+                  text-align: right;
+                  p:nth-child(2){
+                    color: #ff6868;
+                  }
+                }
+              }
+            }
+            li:nth-child(1){
+              border-top: 1px solid #DBDBDB;
+            }
+          }
+        }
+      }
+      .rightbox{
+        width:42%;
+        height: 740px;
+        float: right;
+        .payment_list{
+          width:29%;
+          background-color: white;
+          height: 100%;
+          float: left;
+          ul{
+            li{
+              padding: 20px 0;
+              text-align: center;
+              border-right: 1px solid #DBDBDB;
+              cursor: pointer;
+              &.active{
+                color: #ff6868;
+                border-right: 1px solid transparent;
+              }
+              .list_box{
+                .box_l{
+
+                }
+                .box_r{
+
+                }
+              }
+            }
+          }
+        }
+        .payment_people{
+          width: 71%;
+          float: left;
+          height: 100%;
+          overflow: auto;
+          ul{
+            li{
+              border-bottom: 1px solid #DBDBDB;
+              background-color: #F6F6F6;
+              padding: 0 0 0 4px;
+              margin-right: 4px;
+              cursor: pointer;
+              .people_box{
+                background-color: #FEFEFE;
+                padding: 25px 10px;
+                box-shadow: 0 0 5px #e8e8e8;
+                &.active{
+                  background-color: #F6F6F6;
+                }
+                .pic{
+                  img{
+                    width:50px;
+                    height:50px;
+                    border-radius: 50%;
+                  }
+                }
+                .people_msg{
+                  width:158px;
+                  padding-left: 14px;
+                  line-height: 50px;
+                  p:nth-child(2){
+                    color: #7c7c7c;
+                  }
+                  p:nth-child(3){
+                    color: #7c7c7c;
+                  }
+                }
+                .p_r{
+                  text-align: right;
+                  p:nth-child(2){
+                    color: #ff6868;
+                  }
+                }
+              }
+            }
+            li:nth-child(1){
+              border-top: 1px solid #DBDBDB;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//-------------csadDirectionCenter end---------
+
+//----------csadAddNotes start---------
+
+#addnotes{
+  .notes_box{
+    width: 1005px;
+    margin: 0 auto;
+    .people_msg{
+      width:331px;
+      margin-right: 31px;
+      .pic{
+        img{
+          width:90px;
+          height: 90px;
+          border-radius: 50%;
+        }
+      }
+      .name{
+        margin-left: 5%;
+        margin-right: 10%;
+      }
+      .time{
+        .time_title{
+          font-size: 12px;
+          color: #7c7c7c;
+        }
+        .time_data{
+          color: #2e2e2e;
+        }
+      }
+    }
+    .notes{
+      width:643px;
+      padding: 11px 0;
+      .notes_con{
+        width:450px;
+        p{
+          padding: 3px 6px;
+          background-color: #f0f2f5;
+          color: #6a7682;
+          margin: 0 10px 10px 0;
+        }
+      }
+      .notes_add{
+        p{
+          height: 20px;
+          line-height: 20px;
+          cursor: pointer;
+          color: white;
+          background-color: #FF6868;
+          border-radius: 3px;
+          padding-right: 3px;
+          &:before{
+            content: " ";
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            position: relative;
+            top: 0;
+            background: url("#{$img_path}common/images/personalTailor/csad/label_add.png");
+            display: block;
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#addnotes2{
+  .n_con{
+    width:650px;
+    margin: 0 auto;
+    background-color: #F6F6F6;
+    padding-bottom: 10px;
+    .t_name{
+      font-size: 18px;
+      padding: 18px 0 18px 36px;
+    }
+    .time_l{
+      padding-left: 36px;
+      padding-bottom: 14px;
+      p:nth-child(1){
+        margin-right: 30px;
+      }
+      .time_title{
+        color: #7c7c7c;
+      }
+      .time_data{
+        color: #2e2e2e;
+      }
+    }
+    .notes_box{
+      .notes_list{
+        padding-left: 36px;
+        max-width:72%;
+        p{
+          padding: 3px 6px;
+          background-color: #E1E2E6;
+          color: #6a7682;
+          margin: 0 10px 10px 0;
+          font-size: 12px;
+        }
+      }
+      .notes_add{
+        p{
+          height: 20px;
+          line-height: 20px;
+          cursor: pointer;
+          color: white;
+          background-color: #FF6868;
+          border-radius: 3px;
+          padding-right: 3px;
+          &:before{
+            content: " ";
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            position: relative;
+            top: 0;
+            background: url("#{$img_path}common/images/personalTailor/csad/label_add.png");
+            display: block;
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pop_add{
+  position: fixed;
+  left: 0;
+  top:0;
+  width:100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  .pop_box{
+    position: absolute;
+    left:50%;
+    top:50%;
+    width:340px;
+    height:270px;
+    margin-left: -170px;
+    margin-top: -135px;
+    background-color: white;
+    border-radius: 5px;
+    .add_con{
+      input{
+        display: block;
+        height: 40px;
+        width: 310px;
+        padding-left: 15px;
+        margin: 20px auto 0 auto;
+        background-color: #F6F6F6;
+        color: #b3b3b3;
+        border-radius: 19px;
+      }
+      p{
+        color: #7c7c7c;
+        padding-left: 28px;
+        margin-top: 5px;
+      }
+    }
+    .pop_btn {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 41px;
+      line-height: 40px;
+      border-top: 1px solid #ECECEC;
+      .cancel{
+        text-align: center;
+        border-right: 1px solid #ECECEC;
+        cursor: pointer;
+      }
+      .confirm{
+        text-align: center;
+        color: #E55D5D;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+//----------csadAddNotes end---------
